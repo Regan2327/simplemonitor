@@ -4,7 +4,8 @@
 `0xA311256948A1f7C5b92D63e642Ecd4b8D04816C6`  
 Explorer: https://coston2-explorer.flare.network/address/0xA311256948A1f7C5b92D63e642Ecd4b8D04816C6
 
----
+---https://https://coston2-explorer.flare.network/address/0xA311256948A1f7C5b92D63e642Ecd4b8D04816C6
+
 
 ## **Project Description**
 Savings Planner is a simple, user-friendly decentralized savings management tool built on the Flare (Coston2) network.  
