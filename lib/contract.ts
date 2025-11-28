@@ -1,95 +1,54 @@
-export const contractAddress = "0xA311256948A1f7C5b92D63e642Ecd4b8D04816C6";
+export const CONTRACT_ADDRESS = '0xYourNewContractAddress'; // Update after deployment
 
-// Export only the ABI array expected by viem/wagmi
-export const contractABI = [
+export const CONTRACT_ABI = [
   {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "user",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "MoneyDeposited",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "user",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "MoneyWithdrawn",
-    "type": "event"
-  },
-  {
-    "inputs": [],
-    "name": "checkMySavings",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "deposit",
+    "inputs": [{"internalType": "string", "name": "_endpoint", "type": "string"}],
+    "name": "addMonitor",
     "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
+      {"internalType": "uint256", "name": "_index", "type": "uint256"},
+      {"internalType": "string", "name": "_status", "type": "string"}
     ],
-    "name": "savings",
+    "name": "updateStatus",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getMyMonitors",
     "outputs": [
       {
-        "internalType": "uint256",
+        "components": [
+          {"internalType": "string", "name": "endpoint", "type": "string"},
+          {"internalType": "uint256", "name": "lastChecked", "type": "uint256"},
+          {"internalType": "bool", "name": "isActive", "type": "bool"},
+          {"internalType": "string", "name": "status", "type": "string"}
+        ],
+        "internalType": "struct SimpleMonitor.Monitor[]",
         "name": "",
-        "type": "uint256"
+        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "withdraw",
+    "inputs": [],
+    "name": "getMonitorCount",
+    "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "uint256", "name": "_index", "type": "uint256"}],
+    "name": "removeMonitor",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   }
-] as const;
+];
